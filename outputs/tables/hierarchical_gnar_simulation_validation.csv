@@ -1,0 +1,6 @@
+"check","value","status"
+"station_index_alignment",TRUE,"PASS"
+"dynamic_parameter_recovery",TRUE,"PASS"
+"station_intercept_recovery",TRUE,"PASS"
+"innovation_variance_recovery",TRUE,"PASS"
+"multi_chain_convergence",TRUE,"PASS"

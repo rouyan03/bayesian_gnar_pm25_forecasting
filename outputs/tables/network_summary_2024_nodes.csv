@@ -1,0 +1,5 @@
+"network","nodes","directed_nonzero_edges","density_directed_no_self","min_out_degree","mean_out_degree","max_out_degree","row_normalised"
+"equal_neighbour",30,870,1,29,29,29,TRUE
+"inverse_distance",30,870,1,29,29,29,TRUE
+"knn4",30,120,0.137931034482759,4,4,4,TRUE
+"threshold150km",30,232,0.266666666666667,0,7.73333333333333,15,TRUE

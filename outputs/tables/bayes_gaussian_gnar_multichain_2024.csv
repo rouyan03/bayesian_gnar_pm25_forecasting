@@ -1,0 +1,2 @@
+"model","network","model_order","prior","chains","post_burn_draws","parameters","rmse","mae","coverage_95","interval_width_95","max_rhat","min_bulk_ess","min_tail_ess","max_mcse_mean","stationary_probability"
+"Bayesian Gaussian GNAR","equal_neighbour","GNAR(2,[1,1])","mu~N(0,10000); alpha,beta~N(0,1); sigma2~IG(0.01,0.01)",4,16000,5,3.83327611621948,2.70936697880793,0.927927927927928,13.0410168015673,1.00006359021012,15158.0832771466,15549.3372517598,0.00133513552884675,1

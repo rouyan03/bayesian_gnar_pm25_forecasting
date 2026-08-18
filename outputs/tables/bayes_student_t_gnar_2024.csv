@@ -1,0 +1,2 @@
+"model","likelihood","selected_nu","validation_selected_nu","network","model_order","parameters","rmspe","mae","crps","coverage_95","interval_width_95","max_rhat","min_bulk_ess","min_tail_ess","stationary_probability"
+"Student-t Bayesian GNAR","Student-t",3,46,"equal_neighbour","GNAR(2,[1,1])",5,3.91585273373924,2.70652274838666,2.03559580224713,0.916216216216216,12.5533888682389,1.00061453770926,4748.54653516707,8387.91515619298,1

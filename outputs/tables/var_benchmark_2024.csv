@@ -1,0 +1,2 @@
+"model","model_order","selected_lambda","selection_rule","parameters","test_rmse","test_mae","note"
+"Ridge VAR","VAR(2)",1000,"minimum validation RMSE",1830,3.82131916979254,2.70694327289109,"VAR uses no network; ridge regularisation shrinks the high-dimensional VAR coefficients"

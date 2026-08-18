@@ -1,0 +1,2 @@
+"draws_checked","stationary_probability","spectral_radius_mean","spectral_radius_q025","spectral_radius_q975","spectral_radius_max","network","model_order","likelihood","validation_selected_nu","fitted_nu"
+1600,1,0.566961803097913,0.511470718113991,0.613561311760628,0.637884526172554,"equal_neighbour","GNAR(2,[1,1])","Student-t",46,3

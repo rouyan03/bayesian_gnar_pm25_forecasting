@@ -1,0 +1,3 @@
+"model","period","rmse","mae","mean_bias_forecast_minus_observed","peak_threshold","peak_count","peak_rmse","peak_mae","peak_bias_forecast_minus_observed","family","setting","peak_bias_reduction_fraction","success_peak_bias","success_rmse_guard","success"
+"Gaussian GNAR baseline","test",3.83317864841647,2.70938858562425,-0.277914819239647,14.2399940217392,222,8.81574131299898,7.58492743428537,-6.9436635913851,"baseline","OLS mean",0,FALSE,TRUE,FALSE
+"Peak-weighted GNAR q=0.95 weight=4","test",3.93457370513059,2.88567016201763,0.682979974514807,14.2399940217392,222,7.52391997817617,6.4099488876908,-4.27569371288406,"peak_weighted","q=0.95;weight=4",0.384230866514206,FALSE,TRUE,FALSE
