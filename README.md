@@ -1,6 +1,6 @@
 # Bayesian GNAR PM2.5 Forecasting
 
-This repository contains the R code for the thesis analysis on
+This repository contains the R code for my thesis analysis on
 Bayesian GNAR forecasting of daily PM2.5 concentrations from UK Automatic Urban
 and Rural Network (AURN) monitoring stations.
 
