@@ -56,17 +56,20 @@ interval_plot <- ggplot2::ggplot(plot_data, ggplot2::aes(date, forecast_mean)) +
     values = c("Observed PM2.5" = 16),
     name = NULL
   ) +
-  ggplot2::labs(x = NULL, y = expression(PM[2.5])) +
+  ggplot2::labs(x = NULL, y = "PM2.5") +
   ggplot2::theme_minimal(base_size = 11) +
   ggplot2::theme(
     panel.grid.minor = ggplot2::element_blank(),
     strip.text = ggplot2::element_text(face = "bold", size = 10),
-    axis.text.x = ggplot2::element_text(size = 8),
+    axis.text.x = ggplot2::element_text(size = 10),
+    axis.text.y = ggplot2::element_text(size = 10),
+    axis.title.y = ggplot2::element_text(size = 12),
     legend.position = "bottom",
     legend.box = "horizontal",
     legend.spacing.x = grid::unit(0.3, "cm"),
-    legend.key.width = grid::unit(0.9, "cm"),
-    plot.margin = ggplot2::margin(5, 8, 5, 5)
+    legend.key.width = grid::unit(1.25, "cm"),
+    legend.text = ggplot2::element_text(size = 11.5),
+    plot.margin = ggplot2::margin(5, 12, 5, 5)
   )
 
 ggplot2::ggsave(

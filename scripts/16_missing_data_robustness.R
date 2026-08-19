@@ -691,7 +691,7 @@ plot_40 <- ggplot2::ggplot(
     labels = paste0(100 * missing_rates, "%")
   ) +
   ggplot2::labs(
-    x = "Training observations removed",
+    x = "Training observations removed (%)",
     y = "Test RMSPE",
     colour = NULL,
     linetype = NULL,
@@ -700,9 +700,10 @@ plot_40 <- ggplot2::ggplot(
   ggplot2::theme_classic(base_size = 13) +
   ggplot2::theme(
     legend.position = "bottom",
-    legend.key.width = grid::unit(1.1, "cm"),
-    legend.text = ggplot2::element_text(size = 10.2),
-    axis.text = ggplot2::element_text(colour = "#333333")
+    legend.key.width = grid::unit(1.35, "cm"),
+    legend.text = ggplot2::element_text(size = 12),
+    axis.title = ggplot2::element_text(size = 15),
+    axis.text = ggplot2::element_text(size = 12, colour = "#333333")
   )
 
 ggplot2::ggsave(
