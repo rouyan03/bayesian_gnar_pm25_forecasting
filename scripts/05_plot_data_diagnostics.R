@@ -112,12 +112,13 @@ series_data <- data.frame(
 series_plot <- ggplot2::ggplot(series_data, ggplot2::aes(date, pm25)) +
   ggplot2::geom_line(colour = "#1D5D7C", linewidth = 0.28) +
   ggplot2::facet_wrap(~site_id, ncol = 2, scales = "free_y") +
-  ggplot2::labs(x = NULL, y = expression(PM[2.5])) +
+  ggplot2::labs(x = NULL, y = "PM2.5") +
   ggplot2::theme_minimal(base_size = 10) +
   ggplot2::theme(
     panel.grid.minor = ggplot2::element_blank(),
     strip.text = ggplot2::element_text(face = "bold"),
-    axis.text.x = ggplot2::element_text(size = 8)
+    axis.text.x = ggplot2::element_text(size = 8.3),
+    plot.margin = ggplot2::margin(5.5, 12, 5.5, 5.5)
   )
 
 ggplot2::ggsave(

@@ -250,7 +250,11 @@ if (requireNamespace("ggplot2", quietly = TRUE)) {
       fill = "Validation RMSE"
     ) +
     theme_minimal(base_size = 10) +
-    theme(axis.text.x = element_text(angle = 25, hjust = 1))
+    theme(
+      axis.text.x = element_text(angle = 25, hjust = 1, size = 11.5),
+      axis.text.y = element_text(size = 11.5),
+      panel.grid = element_blank()
+    )
   ggsave(
     file.path(figure_dir, "ols_gnar_selection_validation_heatmap_2024_thesis_blue_red.png"),
     p,
