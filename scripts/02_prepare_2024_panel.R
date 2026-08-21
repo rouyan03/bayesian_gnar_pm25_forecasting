@@ -56,21 +56,9 @@ site_missing <- merge(site_missing, sites, by = "site_id", all.x = TRUE)
 #summarise 2024 panel
 panel_summary <- data.frame(
   quantity = c(
-    "year",
-    "nodes",
-    "daily_time_points",
-    "training_days",
-    "validation_days",
-    "test_days",
-    "first_date",
-    "last_date",
-    "total_daily_cells",
-    "missing_daily_cells",
-    "overall_daily_completeness",
-    "mean_pm25",
-    "sd_pm25",
-    "min_pm25",
-    "max_pm25"
+    "year", "nodes", "daily_time_points", "training_days", "validation_days", "test_days",
+    "first_date", "last_date", "total_daily_cells", "missing_daily_cells", "overall_daily_completeness",
+    "mean_pm25", "sd_pm25", "min_pm25", "max_pm25"
   ),
   value = c(
     2024,

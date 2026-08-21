@@ -1,0 +1,2 @@
+"model","n_residuals","mean_residual","sd_residual","q025","q500","q975","mean_abs_residual","acf_lag1_daily_mean","acf_lag2_daily_mean","acf_lag7_daily_mean"
+"Hierarchical Bayesian GNAR",8700,-0.000245634396368186,3.29453664451762,-5.65417507594591,-0.395029007439248,8.34122204516617,2.21795757139227,0.00466959940067032,-0.0191194372731678,0.0635318841128294

@@ -270,7 +270,78 @@ forecast_table <- data.frame(
   stringsAsFactors = FALSE
 )
 
+theta_hat <- colMeans(combined$theta)
+Z <- model.matrix(~station - 1)
+colnames(Z) <- paste0("station_", site_ids)
+R_hierarchical <- cbind(design$R, Z)
+fitted_train <- as.vector(R_hierarchical %*% theta_hat)
+residual_train <- design$y - fitted_train
+residual_matrix <- matrix(
+  residual_train,
+  nrow = split$fit_end - p,
+  ncol = length(site_ids),
+  byrow = TRUE,
+  dimnames = list(NULL, site_ids)
+)
+mean_residual_by_day <- rowMeans(residual_matrix)
+acf_values <- as.numeric(stats::acf(mean_residual_by_day, plot = FALSE, lag.max = 14)$acf)[-1]
+residual_table <- data.frame(
+  date = rep(panel$date[(p + 1):split$fit_end], each = length(site_ids)),
+  site_id = rep(site_ids, times = split$fit_end - p),
+  observed = design$y,
+  fitted = fitted_train,
+  residual = residual_train,
+  stringsAsFactors = FALSE
+)
+residual_summary <- data.frame(
+  model = "Hierarchical Bayesian GNAR",
+  n_residuals = length(residual_train),
+  mean_residual = mean(residual_train),
+  sd_residual = sd(residual_train),
+  q025 = as.numeric(quantile(residual_train, 0.025)),
+  q500 = as.numeric(quantile(residual_train, 0.500)),
+  q975 = as.numeric(quantile(residual_train, 0.975)),
+  mean_abs_residual = mean(abs(residual_train)),
+  acf_lag1_daily_mean = acf_values[1],
+  acf_lag2_daily_mean = acf_values[2],
+  acf_lag7_daily_mean = acf_values[7],
+  stringsAsFactors = FALSE
+)
+
+if (requireNamespace("ggplot2", quietly = TRUE)) {
+  figure_dir <- file.path(project_root, "outputs", "figures")
+  dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
+  qq_data <- data.frame(
+    theoretical = qnorm(ppoints(length(residual_train))),
+    residual = sort(residual_train)
+  )
+
+  residual_plot <- ggplot2::ggplot(qq_data, ggplot2::aes(theoretical, residual)) +
+    ggplot2::geom_abline(
+      intercept = 0,
+      slope = sd(residual_train),
+      colour = "#A33C31",
+      linetype = "dashed"
+    ) +
+    ggplot2::geom_point(size = 0.8, alpha = 0.55, colour = "#1D5D7C") +
+    ggplot2::labs(x = "Normal quantile", y = "Residual") +
+    ggplot2::theme_classic(base_size = 12) +
+    ggplot2::theme(
+      axis.text = ggplot2::element_text(colour = "#333333")
+    )
+
+  ggplot2::ggsave(
+    file.path(figure_dir, "hierarchical_bayes_gnar_residual_diagnostics_2024.png"),
+    residual_plot,
+    width = 5.8,
+    height = 4.6,
+    dpi = 320
+  )
+}
+
 write.csv(summary_table, file.path(table_dir, "hierarchical_station_intercept_bayes_gnar_2024.csv"), row.names = FALSE)
 write.csv(coefficient_table, file.path(table_dir, "hierarchical_station_intercept_bayes_gnar_coefficients_2024.csv"), row.names = FALSE)
 write.csv(diagnostics, file.path(table_dir, "hierarchical_station_intercept_bayes_gnar_diagnostics_2024.csv"), row.names = FALSE)
 write.csv(forecast_table, file.path(table_dir, "hierarchical_station_intercept_bayes_gnar_forecasts_2024.csv"), row.names = FALSE)
+write.csv(residual_table, file.path(table_dir, "hierarchical_station_intercept_bayes_gnar_residuals_2024.csv"), row.names = FALSE)
+write.csv(residual_summary, file.path(table_dir, "hierarchical_station_intercept_bayes_gnar_residual_summary_2024.csv"), row.names = FALSE)
