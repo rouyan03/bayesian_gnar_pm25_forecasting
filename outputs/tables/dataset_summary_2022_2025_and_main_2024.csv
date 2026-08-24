@@ -1,6 +1,0 @@
-"dataset","role","nodes","daily_time_points","daily_cells","daily_missing","daily_completeness"
-"main_2024","main model comparison",30,366,10980,0,1
-"expanded_2022","robustness/external validation input",30,365,10950,927,0.915342465753425
-"expanded_2023","robustness/external validation input",30,365,10950,199,0.981826484018265
-"expanded_2024","robustness/external validation input",30,366,10980,0,1
-"expanded_2025","robustness/external validation input",30,365,10950,172,0.984292237442922

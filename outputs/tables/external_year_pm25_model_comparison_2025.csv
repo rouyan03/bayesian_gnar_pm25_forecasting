@@ -1,8 +1,0 @@
-"model","parameters","rmse","mae","coverage_95","interval_width_95","max_rhat","min_bulk_ess","min_tail_ess","train_years","test_year","stations","observed_test_cells","training_missing_method","test_history_missing_method"
-"Persistence",0,4.99159640647774,3.05056083117533,NA,NA,NA,NA,NA,"2022-2024",2025,30,10778,"Within-training linear interpolation","Causal last observation carried forward"
-"AR(1)",60,4.55636494551878,2.85841320082902,NA,NA,NA,NA,NA,"2022-2024",2025,30,10778,"Within-training linear interpolation","Causal last observation carried forward"
-"Unrestricted OLS VAR",930,4.54516846602538,2.86955537885646,NA,NA,NA,NA,NA,"2022-2024",2025,30,10778,"Within-training linear interpolation","Causal last observation carried forward"
-"Ridge VAR",1830,4.51269862536882,2.87162024208192,NA,NA,NA,NA,NA,"2022-2024",2025,30,10778,"Within-training linear interpolation","Causal last observation carried forward"
-"OLS GNAR",5,4.5271586234791,2.85442401217253,NA,NA,NA,NA,NA,"2022-2024",2025,30,10778,"Within-training linear interpolation","Causal last observation carried forward"
-"Bayesian Gaussian GNAR",5,4.52713456354351,2.85450747685751,0.903971052143255,13.8111899040438,1.0000010956437,9258.59719929913,9522.5188480368,"2022-2024",2025,30,10778,"Within-training linear interpolation","Causal last observation carried forward"
-"Hierarchical Bayesian GNAR",34,4.49854158815095,2.83129239835265,0.903878270551123,13.7106549837606,1.00058909212609,6545.01239977748,8379.88226641466,"2022-2024",2025,30,10778,"Within-training linear interpolation","Causal last observation carried forward"

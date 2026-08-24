@@ -1,2 +1,0 @@
-"model","parameters","test_start","test_end","test_days","test_cells","rmse","mae"
-"Naive previous-day forecast",0,"2024-10-19","2024-12-31",74,2220,4.303623750133,3.04562712058473

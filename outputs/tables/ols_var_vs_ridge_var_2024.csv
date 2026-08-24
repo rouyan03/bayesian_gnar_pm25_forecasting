@@ -1,3 +1,0 @@
-"model","model_order","regularisation","total_coefficients","test_rmse","test_mae"
-"Ridge VAR","VAR(2)","Ridge lambda=1000",1830,3.82131916979254,2.70694327289109
-"Unrestricted OLS VAR","VAR(1)","None",930,4.15854753779602,2.99983243361146

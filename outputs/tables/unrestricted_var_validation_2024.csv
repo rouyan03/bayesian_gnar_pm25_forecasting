@@ -1,3 +1,0 @@
-"model","p","time_rows","predictors_per_equation","total_coefficients","design_rank","full_column_rank","condition_number","validation_rmse","validation_mae","selected"
-"Unrestricted OLS VAR",1,243,31,930,31,TRUE,217.754671314235,4.10201266378538,2.76375895704043,TRUE
-"Unrestricted OLS VAR",2,242,61,1830,61,TRUE,370.024171943872,4.20023481280179,2.93723968695036,FALSE

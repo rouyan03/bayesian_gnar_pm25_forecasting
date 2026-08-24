@@ -1,2 +1,0 @@
-"model","network","model_order","parameters","rmse","mae","coverage_95","interval_width_95","crps","interval_score_95","max_rhat","min_bulk_ess","min_tail_ess","stationary_probability","tau_mu_mean"
-"Hierarchical Bayesian GNAR","equal_neighbour","GNAR(2,[1,1])",34,3.78785513795214,2.65445857459714,0.927027027027027,12.9360612863263,1.98338641995891,23.2653341230715,1.00060740470394,6028.01261496134,10399.1244287708,1,0.491635170041535
