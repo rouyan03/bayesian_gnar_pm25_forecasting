@@ -407,14 +407,26 @@ if (requireNamespace("ggplot2", quietly = TRUE)) {
         linetype = NULL,
         shape = NULL
       ) +
-      ggplot2::theme_classic(base_size = 11) +
-      ggplot2::theme(legend.position = "bottom")
+      ggplot2::theme_classic(base_size = 13) +
+      ggplot2::guides(
+        colour = ggplot2::guide_legend(nrow = 1),
+        linetype = ggplot2::guide_legend(nrow = 1),
+        shape = ggplot2::guide_legend(nrow = 1)
+      ) +
+      ggplot2::theme(
+        legend.position = "bottom",
+        legend.key.width = grid::unit(0.85, "cm"),
+        legend.spacing.x = grid::unit(0.18, "cm"),
+        axis.title = ggplot2::element_text(size = 14),
+        axis.text = ggplot2::element_text(size = 12),
+        legend.text = ggplot2::element_text(size = 12)
+      )
 
     ggplot2::ggsave(
       file.path(figure_dir, "peak_models_decile_forecast_error_comparison_2024.png"),
       peak_plot,
-      width = 5.2,
-      height = 3.1,
+      width = 8.3,
+      height = 3.6,
       dpi = 320
     )
 }

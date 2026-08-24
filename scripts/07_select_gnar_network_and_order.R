@@ -35,8 +35,6 @@ load_networks <- function(site_ids) {
 
   knn <- read_matrix_csv(file.path(network_dir, "aurn_network_knn4_2024_nodes.csv"))
   knn <- knn[site_ids, site_ids, drop = FALSE]
-  knn_union <- ((knn > 0) | (t(knn) > 0)) * 1
-  diag(knn_union) <- 0
 
   threshold <- read_matrix_csv(file.path(network_dir, "aurn_network_threshold150km_2024_nodes.csv"))
   threshold <- (threshold[site_ids, site_ids, drop = FALSE] > 0) * 1
@@ -45,7 +43,7 @@ load_networks <- function(site_ids) {
   list(
     equal_neighbour = row_normalise(equal),
     inverse_distance = row_normalise(inverse_raw),
-    knn4_undirected_union = row_normalise(knn_union),
+    knn4 = row_normalise(knn),
     threshold150km = row_normalise(threshold)
   )
 }
@@ -209,7 +207,7 @@ if (requireNamespace("ggplot2", quietly = TRUE)) {
   plot_data$network_label <- c(
     equal_neighbour = "Equal neighbour",
     inverse_distance = "Inverse distance",
-    knn4_undirected_union = "4-nearest neighbour",
+    knn4 = "kNN-4",
     threshold150km = "150 km threshold"
   )[plot_data$network]
   plot_data$network_label <- factor(
@@ -217,7 +215,7 @@ if (requireNamespace("ggplot2", quietly = TRUE)) {
     levels = c(
       "Equal neighbour",
       "Inverse distance",
-      "4-nearest neighbour",
+      "kNN-4",
       "150 km threshold"
     )
   )
@@ -247,7 +245,7 @@ if (requireNamespace("ggplot2", quietly = TRUE)) {
     labs(
       x = NULL,
       y = NULL,
-      fill = "Validation RMSE"
+      fill = "Validation RMSPE"
     ) +
     theme_minimal(base_size = 10) +
     theme(

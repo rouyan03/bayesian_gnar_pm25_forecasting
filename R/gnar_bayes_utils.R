@@ -418,8 +418,6 @@ load_canonical_networks <- function(network_dir, site_ids) {
   knn <- read_matrix_csv(
     file.path(network_dir, "aurn_network_knn4_2024_nodes.csv")
   )[site_ids, site_ids, drop = FALSE]
-  knn_union <- ((knn > 0) | (t(knn) > 0)) * 1
-  diag(knn_union) <- 0
 
   threshold <- read_matrix_csv(
     file.path(network_dir, "aurn_network_threshold150km_2024_nodes.csv")
@@ -430,7 +428,7 @@ load_canonical_networks <- function(network_dir, site_ids) {
   list(
     equal_neighbour = row_normalise(equal),
     inverse_distance = row_normalise(inverse_raw),
-    knn4_undirected_union = row_normalise(knn_union),
+    knn4 = row_normalise(knn),
     threshold150km = row_normalise(threshold)
   )
 }
