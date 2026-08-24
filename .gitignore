@@ -2,10 +2,7 @@
 .Rhistory
 .RData
 .Rproj.user/
-*.aux
-*.log
-*.out
-*.toc
-*.fdb_latexmk
-*.fls
-*.synctex.gz
+
+data/
+data_raw/
+outputs/tables/
