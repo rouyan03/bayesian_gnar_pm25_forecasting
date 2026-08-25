@@ -40,7 +40,6 @@ load_plot_network <- function(network_name) {
     A <- read_matrix_csv(
       file.path(network_dir, "aurn_network_knn4_2024_nodes.csv")
     )
-    A <- ((A > 0) | (t(A) > 0)) * 1
   } else if (network_name == "threshold150km") {
     A <- read_matrix_csv(
       file.path(network_dir, "aurn_network_threshold150km_2024_nodes.csv")
